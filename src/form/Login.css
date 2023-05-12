@@ -1,0 +1,40 @@
+.login {
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 4rem;
+    width: 400px;
+    margin: 50px auto;
+    margin-top: 80px;
+    background-color: antiquewhite;
+    height: 480px;
+    border-radius: 5px;
+}
+div h2{
+    text-align: center;
+    font-weight: 600;
+    color: rgb(54, 142, 46);
+    font-size: large;
+}
+
+.input {
+    width: 100%;
+    padding: .2rem;
+    border-radius: 5px;
+    /* margin: 2px; */
+    display: block;
+
+}
+
+form div {
+    margin-top: 20px;
+
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 5px;
+    background-color: rgb(98, 160, 218);
+    border-radius: 5px;
+}
