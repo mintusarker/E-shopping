@@ -18,11 +18,16 @@ div h2{
 
 .input {
     width: 100%;
-    padding: .2rem;
+    height: 40px;
+    padding: 24px;
     border-radius: 5px;
     /* margin: 2px; */
     display: block;
 
+}
+
+.input:focus{
+    outline: none;
 }
 
 form div {

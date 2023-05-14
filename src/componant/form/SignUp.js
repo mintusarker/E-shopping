@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, sendEmailVerification, signInWithPopup, updateProfile } from "firebase/auth";
 
 import './SignUp.css'
-import app from '../firebase/Firebase.config';
+import app from '../../firebase/Firebase.config';
 
 
 const auth = getAuth(app)
@@ -71,13 +71,13 @@ const SignUp = () => {
   };
 
   const handleUpdateProfile = (name) => {
-      updateProfile(auth.currentUser, {
-        displayName: name
-      })
-      .then(()=> {
+    updateProfile(auth.currentUser, {
+      displayName: name
+    })
+      .then(() => {
         // alert('profile updated')
       })
-      .catch(err=> console.log(err))
+      .catch(err => console.log(err))
   }
 
   return (
@@ -86,15 +86,15 @@ const SignUp = () => {
       <form onSubmit={handleSignUp}>
         <div>
           <label htmlFor="name">Name</label>
-          <input className='input' placeholder='Name' type="text" name="name" />
+          <input className='input' placeholder='Name' type="text" name="name" required />
         </div>
         <div>
           <label htmlFor="name">Email</label>
-          <input className='input' placeholder='Email' type="email" name="email" />
+          <input className='input' placeholder='Email' type="email" name="email" required />
         </div>
         <div>
           <label htmlFor="name">Password</label>
-          <input className='input' placeholder='password' type="password" name="password" />
+          <input className='input' placeholder='password' type="password" name="password" required />
         </div>
         <p style={{ color: 'red' }}>{error}</p>
         {

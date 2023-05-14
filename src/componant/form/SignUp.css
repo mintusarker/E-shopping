@@ -9,7 +9,8 @@
     height: 500px;
     border-radius: 5px;
 }
-div h2{
+
+div h2 {
     text-align: center;
     font-weight: 600;
     color: rgb(54, 142, 46);
@@ -23,6 +24,10 @@ div h2{
     /* margin: 2px; */
     display: block;
 
+}
+
+.input:focus {
+    outline: none;
 }
 
 form div {

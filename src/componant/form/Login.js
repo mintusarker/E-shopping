@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Login.css'
 import { getAuth, sendPasswordResetEmail, signInWithEmailAndPassword } from 'firebase/auth';
-import app from '../firebase/Firebase.config';
+import app from '../../firebase/Firebase.config';
 import { Link } from 'react-router-dom';
 
 const auth = getAuth(app)
@@ -42,14 +42,14 @@ const Login = () => {
 
 
     const resetPassword = () => {
-        if(!userEmail){
+        if (!userEmail) {
             alert('Please input a valid email')
             return;
         }
         sendPasswordResetEmail(auth, userEmail)
-        .then(() => {
-            alert('password reset email sent to your mail. please check')
-        }).catch(err => console.log(err))
+            .then(() => {
+                alert('password reset email sent to your mail. please check')
+            }).catch(err => console.log(err))
     }
 
     return (
