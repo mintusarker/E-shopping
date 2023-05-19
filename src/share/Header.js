@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import './Header.css'
 import { getAuth, signOut } from 'firebase/auth';
 import app from '../firebase/Firebase.config';
+import logo from '../assets/logo2.png'
 
 
 const auth = getAuth(app)
@@ -18,7 +19,8 @@ const Header = () => {
 
         <div className='header'>
             <div>
-                <h3>App</h3>
+                <img className='w-24 m-6' src={logo} alt="" />
+                
             </div>
             <div>
                 <ul className='list'>

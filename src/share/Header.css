@@ -17,11 +17,13 @@
 .header {
     display: flex;
     justify-content: space-between;
-    background-color: rgb(10, 27, 139);
+    background-color: rgb(21, 51, 70);
     padding: 10px 44px;
     color: white;
     position: sticky;
     top: 0;
     z-index: 1;
+    height: 60px;
+    align-items: center;
 }
 
