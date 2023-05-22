@@ -6,27 +6,40 @@ const Products = () => {
 
     const [products, setProducts] = useState([]);
     const [product, setProduct] = useState([]);
-    console.log(products);
 
     const { result, count } = product;
-    console.log(result, count);
 
+    // const [pageCount, setPageCount] = useState(0)
+
+
+    // pagination
+    const [page, setPage] = useState(0);
+    const [size, setSize] = useState(10)
+
+    const pages = Math.ceil(count / size)
+    console.log(pages);
+
+
+    // pagination & data load
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch(`http://localhost:5000/products?page=${page}&size=${size}`)
             .then(res => res.json())
             .then(data => {
-                setProducts(data.result)
-                setProduct(data)
+                setProducts(data.result);
+                setProduct(data);
+                // setPageCount(data.count)
             })
-    }, [])
+    }, [page, size])
 
-
+    //search
     const handleChange = async (event) => {
         let key = event.target.value;
         let result = await fetch(`http://localhost:5000/search/${key}`)
         result = await result.json()
         setProducts(result)
     }
+
+
 
 
     return (
@@ -58,6 +71,26 @@ const Products = () => {
                         </ProductsCart>)
                     }
                 </div>
+
+            </div>
+            {/* pagination */}
+            <div className='text-center' >
+                <p>Current Page: {page} & Size:{size}</p>
+                {count &&
+                    [...Array(pages).keys()].map(number => <button className='btn-xs border-2 m-1'
+                        key={number}
+                        // className= {page === number && 'bg-amber-400'}
+                        onClick={() => setPage(number)}
+                    >
+                        {number + 1}
+                    </button>)
+                }
+                <select onChange={e => setSize(e.target.value)} className='border-2 border-black btn-xs'>
+                    <option value="10" selected>10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                </select>
             </div>
         </div>
     );
