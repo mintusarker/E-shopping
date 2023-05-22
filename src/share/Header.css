@@ -1,17 +1,17 @@
 .list {
     display: flex;
     gap: 15px;
-    list-style: none; 
+    list-style: none;
 
 }
 
-.list li{
-      cursor: pointer;
-      font-weight: 500;
+.list li {
+    cursor: pointer;
+    font-weight: 500;
 }
 
-.list li:hover{
-    color: firebrick
+.list li:hover {
+    color: darkgreen
 }
 
 .header {
@@ -27,3 +27,26 @@
     align-items: center;
 }
 
+@media screen and (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+
+    .list {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .list li {
+        width: 500px;
+        height: 30px;
+        text-align: center;
+    }
+
+    .list li:hover {
+        background-color:  rgb(23, 46, 61);
+        color: whitesmoke
+    }
+}
